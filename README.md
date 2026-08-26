@@ -68,18 +68,16 @@ Below is the comparative analysis based on the actual benchmark execution logs i
 
 | Metric / Concurrency | Target Stack | Throughput (Req/sec) | Avg Latency (ms) | p(95) GET Latency | p(95) POST Latency | Error Rate (%) |
 | :--- | :--- | :---: | :---: | :---: | :---: | :---: |
-| **1 VU (Single User)** | **Express Backend** | **3.92 iter/s (~15.7 req/s)** | **4.56 ms** | **13.30 ms** | **11.32 ms** | **0.00%** |
-| | AWS Lambda | 4.42 iter/s (~17.68 req/s) | 293.37 ms | 560.15 ms | 314.53 ms | 0.00% |
-| **10 VUs** | **Express Backend** | **39.32 req/s** | **4.20 ms** | **6.04 ms** | **10.83 ms** | **0.00%** |
+| **1 VU (Single User)** | **Express Backend** | **3.92 req/s** | **4.56 ms** | **13.30 ms** | **11.32 ms** | **0.00%** |
+| | AWS Lambda | 1.64 req/s | 346.12 ms | 795.31 ms | 358.26 ms | 0.00% |
+| **10 VUs** | **Express Backend** | **39.32 req/s** | **4.05 ms** | **6.04 ms** | **10.83 ms** | **0.00%** |
+| | AWS Lambda | 17.68 req/s | 293.37 ms | 560.15 ms | 314.53 ms | 0.00% |
+| **50 VUs** | **Express Backend** | **196.04 req/s** | **4.79 ms** | **12.49 ms** | **11.60 ms** | **0.00%** |
 | | AWS Lambda | 87.88 req/s | 291.30 ms | 351.29 ms | 318.24 ms | 0.00% |
-| **50 VUs** | **Express Backend** | **196.04 req/s** | **4.84 ms** | **12.49 ms** | **11.60 ms** | **0.00%** |
-| | AWS Lambda | 138.14 req/s | 370.58 ms | 1431.94 ms | 444.64 ms | 🚨 **39.28%** |
-| **100 VUs** | **Express Backend** | **392.40 req/s** | **4.42 ms** | **11.10 ms** | **10.45 ms** | **0.00%** |
+| **100 VUs** | **Express Backend** | **392.40 req/s** | **4.44 ms** | **11.10 ms** | **10.45 ms** | **0.00%** |
 | | AWS Lambda | 144.68 req/s | 355.44 ms | 2155.06 ms | 382.53 ms | ⚠️ **3.64%** |
-| **500 VUs** | **Express Backend** | **1,943.73 req/s** | **5.07 ms** | **19.95 ms** | **12.82 ms** | **0.00%** |
+| **500 VUs** | **Express Backend** | **1,943.73 req/s** | **5.27 ms** | **19.95 ms** | **12.82 ms** | **0.00%** |
 | | AWS Lambda | 233.18 req/s | 1,510.00 ms | 3309.34 ms | 3329.93 ms | 🚨 **78.16%** |
-| **1000 VUs** | **Express Backend** | **2,662.70 req/s** | **114.80 ms** | **549.90 ms** | **615.22 ms** | **0.00%** |
-| | AWS Lambda | *Saturated / Failed* | *N/A* | *N/A* | *N/A* | 🚨 **>80%** |
 
 ---
 
@@ -87,11 +85,11 @@ Below is the comparative analysis based on the actual benchmark execution logs i
 
 #### 1. Latency & Network Overhead (Cold vs. Warm Overhead)
 - **Express Baseline**: Achieved steady sub-5ms average request latency across low and medium concurrency (1 to 500 VUs). The persistent connection to PostgreSQL eliminated connection setup overhead.
-- **AWS Lambda**: Exhibited a baseline latency floor of **~280ms–300ms** per operation, even under zero error rates. This is primarily caused by AWS API Gateway HTTP serialization, TLS connection overhead over the public internet, and network round-trips to the database host.
+- **AWS Lambda**: Exhibited a baseline latency floor of **~280ms–350ms** per operation, even under zero error rates. This is primarily caused by AWS API Gateway HTTP serialization, TLS connection overhead over the public internet, and network round-trips to the database host.
 
 #### 2. High Concurrency Scaling & Failure Breakdown
-- **Express Monolithic Server**: Handled up to **60,000 requests at 500 VUs** and **82,552 requests at 1,000 VUs** with a **0.00% error rate**. The single Node.js process managed DB pool connections efficiently.
-- **AWS Lambda Failure Cascade**: Under 50 VUs and higher, Lambda experienced massive error rates (**39.28% at 50 VUs**, rising to **78.16% at 500 VUs**).
+- **Express Monolithic Server**: Handled up to **60,000 requests at 500 VUs** with a **0.00% error rate**. The single Node.js process managed DB pool connections efficiently.
+- **AWS Lambda Failure Cascade**: Up to 50 VUs, Lambda maintained a **0.00% error rate**. At 100 VUs and higher, Lambda experienced connection pool contention and scaling degradation (**3.64% error rate at 100 VUs**, rising to **78.16% at 500 VUs**).
 
 #### 3. Root Cause Analysis: Serverless PostgreSQL Bottleneck
 1. **Database Connection Pool Exhaustion**: In AWS Lambda, concurrent invocations scale horizontally by spinning up isolated container instances. Each container instance initializes its own `pg.Pool` (max 5 connections). Under 500 concurrent VUs, Lambda creates up to 500 concurrent container instances, attempting **2,500 simultaneous PostgreSQL connections**, instantly exceeding PostgreSQL's max connection limits (`FATAL: sorry, too many clients already`).
