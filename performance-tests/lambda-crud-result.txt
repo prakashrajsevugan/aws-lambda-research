@@ -1,0 +1,1086 @@
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+
+     execution: local
+        script: lambda-crud-test.js
+        output: -
+
+     scenarios: (100.00%) 1 scenario, 10 max VUs, 1m0s max duration (incl. graceful stop):
+              * crud_test: 10 looping VUs for 30s (gracefulStop: 30s)
+
+
+running (0m01.0s), 10/10 VUs, 0 complete and 0 interrupted iterations
+crud_test   [   3% ] 10 VUs  01.0s/30s
+
+running (0m02.0s), 10/10 VUs, 0 complete and 0 interrupted iterations
+crud_test   [   7% ] 10 VUs  02.0s/30s
+
+running (0m03.0s), 10/10 VUs, 2 complete and 0 interrupted iterations
+crud_test   [  10% ] 10 VUs  03.0s/30s
+
+running (0m04.0s), 10/10 VUs, 10 complete and 0 interrupted iterations
+crud_test   [  13% ] 10 VUs  04.0s/30s
+
+running (0m05.0s), 10/10 VUs, 10 complete and 0 interrupted iterations
+crud_test   [  17% ] 10 VUs  05.0s/30s
+
+running (0m06.0s), 10/10 VUs, 20 complete and 0 interrupted iterations
+crud_test   [  20% ] 10 VUs  06.0s/30s
+
+running (0m07.0s), 10/10 VUs, 20 complete and 0 interrupted iterations
+crud_test   [  23% ] 10 VUs  07.0s/30s
+
+running (0m08.0s), 10/10 VUs, 30 complete and 0 interrupted iterations
+crud_test   [  27% ] 10 VUs  08.0s/30s
+
+running (0m09.0s), 10/10 VUs, 30 complete and 0 interrupted iterations
+crud_test   [  30% ] 10 VUs  09.0s/30s
+
+running (0m10.0s), 10/10 VUs, 40 complete and 0 interrupted iterations
+crud_test   [  33% ] 10 VUs  10.0s/30s
+
+running (0m11.0s), 10/10 VUs, 40 complete and 0 interrupted iterations
+crud_test   [  37% ] 10 VUs  11.0s/30s
+
+running (0m12.0s), 10/10 VUs, 49 complete and 0 interrupted iterations
+crud_test   [  40% ] 10 VUs  12.0s/30s
+
+running (0m13.0s), 10/10 VUs, 50 complete and 0 interrupted iterations
+crud_test   [  43% ] 10 VUs  13.0s/30s
+
+running (0m14.0s), 10/10 VUs, 56 complete and 0 interrupted iterations
+crud_test   [  47% ] 10 VUs  14.0s/30s
+
+running (0m15.0s), 10/10 VUs, 60 complete and 0 interrupted iterations
+crud_test   [  50% ] 10 VUs  15.0s/30s
+
+running (0m16.0s), 10/10 VUs, 64 complete and 0 interrupted iterations
+crud_test   [  53% ] 10 VUs  16.0s/30s
+
+running (0m17.0s), 10/10 VUs, 70 complete and 0 interrupted iterations
+crud_test   [  57% ] 10 VUs  17.0s/30s
+
+running (0m18.0s), 10/10 VUs, 72 complete and 0 interrupted iterations
+crud_test   [  60% ] 10 VUs  18.0s/30s
+
+running (0m19.0s), 10/10 VUs, 80 complete and 0 interrupted iterations
+crud_test   [  63% ] 10 VUs  19.0s/30s
+
+running (0m20.0s), 10/10 VUs, 81 complete and 0 interrupted iterations
+crud_test   [  67% ] 10 VUs  20.0s/30s
+
+running (0m21.0s), 10/10 VUs, 90 complete and 0 interrupted iterations
+crud_test   [  70% ] 10 VUs  21.0s/30s
+
+running (0m22.0s), 10/10 VUs, 90 complete and 0 interrupted iterations
+crud_test   [  73% ] 10 VUs  22.0s/30s
+
+running (0m23.0s), 10/10 VUs, 100 complete and 0 interrupted iterations
+crud_test   [  77% ] 10 VUs  23.0s/30s
+
+running (0m24.0s), 10/10 VUs, 100 complete and 0 interrupted iterations
+crud_test   [  80% ] 10 VUs  24.0s/30s
+
+running (0m25.0s), 10/10 VUs, 107 complete and 0 interrupted iterations
+crud_test   [  83% ] 10 VUs  25.0s/30s
+
+running (0m26.0s), 10/10 VUs, 110 complete and 0 interrupted iterations
+crud_test   [  87% ] 10 VUs  26.0s/30s
+
+running (0m27.0s), 10/10 VUs, 117 complete and 0 interrupted iterations
+crud_test   [  90% ] 10 VUs  27.0s/30s
+
+running (0m28.0s), 10/10 VUs, 120 complete and 0 interrupted iterations
+crud_test   [  93% ] 10 VUs  28.0s/30s
+
+running (0m29.0s), 10/10 VUs, 126 complete and 0 interrupted iterations
+crud_test   [  97% ] 10 VUs  29.0s/30s
+
+running (0m30.0s), 10/10 VUs, 130 complete and 0 interrupted iterations
+crud_test   [ 100% ] 10 VUs  30.0s/30s
+
+running (0m31.0s), 06/10 VUs, 134 complete and 0 interrupted iterations
+crud_test ↓ [ 100% ] 10 VUs  30s
+
+
+  █ THRESHOLDS 
+
+    crud_error_rate
+    ✓ 'rate<0.01' rate=0.00%
+
+    delete_latency
+    ✓ 'p(95)<1000' p(95)=314.642113
+
+    get_latency
+    ✓ 'p(95)<1000' p(95)=560.150265
+
+    http_req_failed
+    ✓ 'rate<0.01' rate=0.00%
+
+    post_latency
+    ✓ 'p(95)<1000' p(95)=314.530569
+
+    put_latency
+    ✓ 'p(95)<1000' p(95)=340.305963
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 840     26.525766/s
+    checks_succeeded...: 100.00% 840 out of 840
+    checks_failed......: 0.00%   0 out of 840
+
+    ✓ GET status is 200
+    ✓ POST status is 201
+    ✓ POST returned task ID
+    ✓ PUT status is 200
+    ✓ PUT completed successfully
+    ✓ DELETE status is 200
+
+    CUSTOM
+    created_tasks..................: 140    4.420961/s
+    crud_error_rate................: 0.00%  0 out of 560
+    delete_latency.................: avg=284.656768 min=259.791792 med=282.750064 max=347.786458 p(90)=300.87159  p(95)=314.642113
+    deleted_tasks..................: 140    4.420961/s
+    get_latency....................: avg=308.65697  min=263.282911 med=287.354914 max=577.433898 p(90)=351.187998 p(95)=560.150265
+    post_latency...................: avg=288.696803 min=261.103036 med=284.344207 max=429.778054 p(90)=303.483475 p(95)=314.530569
+    put_latency....................: avg=291.482444 min=263.22871  med=286.110588 max=407.287111 p(90)=319.33695  p(95)=340.305963
+
+    HTTP
+    http_req_duration..............: avg=293.37ms   min=259.79ms   med=284.73ms   max=577.43ms   p(90)=312.03ms   p(95)=342.33ms  
+      { expected_response:true }...: avg=293.37ms   min=259.79ms   med=284.73ms   max=577.43ms   p(90)=312.03ms   p(95)=342.33ms  
+    http_req_failed................: 0.00%  0 out of 560
+    http_reqs......................: 560    17.683844/s
+
+    EXECUTION
+    iteration_duration.............: avg=2.22s      min=2.06s      med=2.15s      max=3.2s       p(90)=2.26s      p(95)=3.06s     
+    iterations.....................: 140    4.420961/s
+    vus............................: 6      min=6        max=10
+    vus_max........................: 10     min=10       max=10
+
+    NETWORK
+    data_received..................: 292 kB 9.2 kB/s
+    data_sent......................: 84 kB  2.7 kB/s
+
+
+
+
+running (0m31.7s), 00/10 VUs, 140 complete and 0 interrupted iterations
+crud_test ✓ [ 100% ] 10 VUs  30s
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+
+     execution: local
+        script: lambda-crud-test.js
+        output: -
+
+     scenarios: (100.00%) 1 scenario, 50 max VUs, 1m0s max duration (incl. graceful stop):
+              * crud_test: 50 looping VUs for 30s (gracefulStop: 30s)
+
+
+running (0m01.0s), 50/50 VUs, 0 complete and 0 interrupted iterations
+crud_test   [   3% ] 50 VUs  01.0s/30s
+
+running (0m02.0s), 50/50 VUs, 0 complete and 0 interrupted iterations
+crud_test   [   7% ] 50 VUs  02.0s/30s
+
+running (0m03.0s), 50/50 VUs, 37 complete and 0 interrupted iterations
+crud_test   [  10% ] 50 VUs  03.0s/30s
+
+running (0m04.0s), 50/50 VUs, 49 complete and 0 interrupted iterations
+crud_test   [  13% ] 50 VUs  04.0s/30s
+
+running (0m05.0s), 50/50 VUs, 63 complete and 0 interrupted iterations
+crud_test   [  17% ] 50 VUs  05.0s/30s
+
+running (0m06.0s), 50/50 VUs, 96 complete and 0 interrupted iterations
+crud_test   [  20% ] 50 VUs  06.0s/30s
+
+running (0m07.0s), 50/50 VUs, 110 complete and 0 interrupted iterations
+crud_test   [  23% ] 50 VUs  07.0s/30s
+
+running (0m08.0s), 50/50 VUs, 144 complete and 0 interrupted iterations
+crud_test   [  27% ] 50 VUs  08.0s/30s
+
+running (0m09.0s), 50/50 VUs, 151 complete and 0 interrupted iterations
+crud_test   [  30% ] 50 VUs  09.0s/30s
+
+running (0m10.0s), 50/50 VUs, 191 complete and 0 interrupted iterations
+crud_test   [  33% ] 50 VUs  10.0s/30s
+
+running (0m11.0s), 50/50 VUs, 201 complete and 0 interrupted iterations
+crud_test   [  37% ] 50 VUs  11.0s/30s
+
+running (0m12.0s), 50/50 VUs, 239 complete and 0 interrupted iterations
+crud_test   [  40% ] 50 VUs  12.0s/30s
+
+running (0m13.0s), 50/50 VUs, 251 complete and 0 interrupted iterations
+crud_test   [  43% ] 50 VUs  13.0s/30s
+
+running (0m14.0s), 50/50 VUs, 287 complete and 0 interrupted iterations
+crud_test   [  47% ] 50 VUs  14.0s/30s
+
+running (0m15.0s), 50/50 VUs, 300 complete and 0 interrupted iterations
+crud_test   [  50% ] 50 VUs  15.0s/30s
+
+running (0m16.0s), 50/50 VUs, 334 complete and 0 interrupted iterations
+crud_test   [  53% ] 50 VUs  16.0s/30s
+
+running (0m17.0s), 50/50 VUs, 348 complete and 0 interrupted iterations
+crud_test   [  57% ] 50 VUs  17.0s/30s
+
+running (0m18.0s), 50/50 VUs, 375 complete and 0 interrupted iterations
+crud_test   [  60% ] 50 VUs  18.0s/30s
+
+running (0m19.0s), 50/50 VUs, 397 complete and 0 interrupted iterations
+crud_test   [  63% ] 50 VUs  19.0s/30s
+
+running (0m20.0s), 50/50 VUs, 414 complete and 0 interrupted iterations
+crud_test   [  67% ] 50 VUs  20.0s/30s
+
+running (0m21.0s), 50/50 VUs, 445 complete and 0 interrupted iterations
+crud_test   [  70% ] 50 VUs  21.0s/30s
+
+running (0m22.0s), 50/50 VUs, 463 complete and 0 interrupted iterations
+crud_test   [  73% ] 50 VUs  22.0s/30s
+
+running (0m23.0s), 50/50 VUs, 491 complete and 0 interrupted iterations
+crud_test   [  77% ] 50 VUs  23.0s/30s
+
+running (0m24.0s), 50/50 VUs, 511 complete and 0 interrupted iterations
+crud_test   [  80% ] 50 VUs  24.0s/30s
+
+running (0m25.0s), 50/50 VUs, 541 complete and 0 interrupted iterations
+crud_test   [  83% ] 50 VUs  25.0s/30s
+
+running (0m26.0s), 50/50 VUs, 555 complete and 0 interrupted iterations
+crud_test   [  87% ] 50 VUs  26.0s/30s
+
+running (0m27.0s), 50/50 VUs, 589 complete and 0 interrupted iterations
+crud_test   [  90% ] 50 VUs  27.0s/30s
+
+running (0m28.0s), 50/50 VUs, 604 complete and 0 interrupted iterations
+crud_test   [  93% ] 50 VUs  28.0s/30s
+
+running (0m29.0s), 50/50 VUs, 635 complete and 0 interrupted iterations
+crud_test   [  97% ] 50 VUs  29.0s/30s
+
+running (0m30.0s), 50/50 VUs, 654 complete and 0 interrupted iterations
+crud_test   [ 100% ] 50 VUs  30.0s/30s
+
+running (0m31.0s), 25/50 VUs, 679 complete and 0 interrupted iterations
+crud_test ↓ [ 100% ] 50 VUs  30s
+
+running (0m32.0s), 03/50 VUs, 701 complete and 0 interrupted iterations
+crud_test ↓ [ 100% ] 50 VUs  30s
+
+
+  █ THRESHOLDS 
+
+    crud_error_rate
+    ✓ 'rate<0.01' rate=0.00%
+
+    delete_latency
+    ✓ 'p(95)<1000' p(95)=319.575791
+
+    get_latency
+    ✓ 'p(95)<1000' p(95)=351.293823
+
+    http_req_failed
+    ✓ 'rate<0.01' rate=0.00%
+
+    post_latency
+    ✓ 'p(95)<1000' p(95)=318.239746
+
+    put_latency
+    ✓ 'p(95)<1000' p(95)=335.245767
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 4224    131.825583/s
+    checks_succeeded...: 100.00% 4224 out of 4224
+    checks_failed......: 0.00%   0 out of 4224
+
+    ✓ GET status is 200
+    ✓ POST status is 201
+    ✓ POST returned task ID
+    ✓ PUT status is 200
+    ✓ PUT completed successfully
+    ✓ DELETE status is 200
+
+    CUSTOM
+    created_tasks..................: 704    21.970931/s
+    crud_error_rate................: 0.00%  0 out of 2816
+    delete_latency.................: avg=288.756666 min=246.500633 med=281.379848 max=1130.232387 p(90)=305.229647 p(95)=319.575791
+    deleted_tasks..................: 704    21.970931/s
+    get_latency....................: avg=296.634329 min=242.163786 med=282.551117 max=1468.95179  p(90)=315.292251 p(95)=351.293823
+    post_latency...................: avg=285.787064 min=245.332506 med=283.231244 max=399.754233  p(90)=304.864987 p(95)=318.239746
+    put_latency....................: avg=294.028234 min=243.119038 med=283.035691 max=1207.359735 p(90)=316.488066 p(95)=335.245767
+
+    HTTP
+    http_req_duration..............: avg=291.3ms    min=242.16ms   med=282.59ms   max=1.46s       p(90)=308.32ms   p(95)=334.22ms  
+      { expected_response:true }...: avg=291.3ms    min=242.16ms   med=282.59ms   max=1.46s       p(90)=308.32ms   p(95)=334.22ms  
+    http_req_failed................: 0.00%  0 out of 2816
+    http_reqs......................: 2816   87.883722/s
+
+    EXECUTION
+    iteration_duration.............: avg=2.2s       min=2.01s      med=2.14s      max=4.12s       p(90)=2.28s      p(95)=2.74s     
+    iterations.....................: 704    21.970931/s
+    vus............................: 3      min=3         max=50
+    vus_max........................: 50     min=50        max=50
+
+    NETWORK
+    data_received..................: 2.3 MB 72 kB/s
+    data_sent......................: 430 kB 13 kB/s
+
+
+
+
+running (0m32.0s), 00/50 VUs, 704 complete and 0 interrupted iterations
+crud_test ✓ [ 100% ] 50 VUs  30s
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+
+     execution: local
+        script: lambda-crud-test.js
+        output: -
+
+     scenarios: (100.00%) 1 scenario, 100 max VUs, 1m0s max duration (incl. graceful stop):
+              * crud_test: 100 looping VUs for 30s (gracefulStop: 30s)
+
+
+running (0m01.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+crud_test   [   3% ] 100 VUs  01.0s/30s
+
+running (0m02.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+crud_test   [   7% ] 100 VUs  02.0s/30s
+
+running (0m03.0s), 100/100 VUs, 4 complete and 0 interrupted iterations
+crud_test   [  10% ] 100 VUs  03.0s/30s
+
+running (0m04.0s), 100/100 VUs, 41 complete and 0 interrupted iterations
+crud_test   [  13% ] 100 VUs  04.0s/30s
+
+running (0m05.0s), 100/100 VUs, 111 complete and 0 interrupted iterations
+crud_test   [  17% ] 100 VUs  05.0s/30s
+
+running (0m06.0s), 100/100 VUs, 134 complete and 0 interrupted iterations
+crud_test   [  20% ] 100 VUs  06.0s/30s
+
+running (0m07.0s), 100/100 VUs, 205 complete and 0 interrupted iterations
+crud_test   [  23% ] 100 VUs  07.0s/30s
+
+running (0m08.0s), 100/100 VUs, 235 complete and 0 interrupted iterations
+crud_test   [  27% ] 100 VUs  08.0s/30s
+
+running (0m09.0s), 100/100 VUs, 300 complete and 0 interrupted iterations
+crud_test   [  30% ] 100 VUs  09.0s/30s
+
+running (0m10.0s), 100/100 VUs, 340 complete and 0 interrupted iterations
+crud_test   [  33% ] 100 VUs  10.0s/30s
+
+running (0m11.0s), 100/100 VUs, 392 complete and 0 interrupted iterations
+crud_test   [  37% ] 100 VUs  11.0s/30s
+
+running (0m12.0s), 100/100 VUs, 436 complete and 0 interrupted iterations
+crud_test   [  40% ] 100 VUs  12.0s/30s
+
+running (0m13.0s), 100/100 VUs, 484 complete and 0 interrupted iterations
+crud_test   [  43% ] 100 VUs  13.0s/30s
+
+running (0m14.0s), 100/100 VUs, 535 complete and 0 interrupted iterations
+crud_test   [  47% ] 100 VUs  14.0s/30s
+
+running (0m15.0s), 100/100 VUs, 581 complete and 0 interrupted iterations
+crud_test   [  50% ] 100 VUs  15.0s/30s
+
+running (0m16.0s), 100/100 VUs, 635 complete and 0 interrupted iterations
+crud_test   [  53% ] 100 VUs  16.0s/30s
+
+running (0m17.0s), 100/100 VUs, 679 complete and 0 interrupted iterations
+crud_test   [  57% ] 100 VUs  17.0s/30s
+
+running (0m18.0s), 100/100 VUs, 722 complete and 0 interrupted iterations
+crud_test   [  60% ] 100 VUs  18.0s/30s
+
+running (0m19.0s), 100/100 VUs, 763 complete and 0 interrupted iterations
+crud_test   [  63% ] 100 VUs  19.0s/30s
+
+running (0m20.0s), 100/100 VUs, 815 complete and 0 interrupted iterations
+crud_test   [  67% ] 100 VUs  20.0s/30s
+
+running (0m21.0s), 100/100 VUs, 857 complete and 0 interrupted iterations
+crud_test   [  70% ] 100 VUs  21.0s/30s
+
+running (0m22.0s), 100/100 VUs, 899 complete and 0 interrupted iterations
+crud_test   [  73% ] 100 VUs  22.0s/30s
+
+running (0m23.0s), 100/100 VUs, 948 complete and 0 interrupted iterations
+crud_test   [  77% ] 100 VUs  23.0s/30s
+
+running (0m24.0s), 100/100 VUs, 997 complete and 0 interrupted iterations
+crud_test   [  80% ] 100 VUs  24.0s/30s
+
+running (0m25.0s), 100/100 VUs, 1046 complete and 0 interrupted iterations
+crud_test   [  83% ] 100 VUs  25.0s/30s
+
+running (0m26.0s), 100/100 VUs, 1095 complete and 0 interrupted iterations
+crud_test   [  87% ] 100 VUs  26.0s/30s
+
+running (0m27.0s), 100/100 VUs, 1144 complete and 0 interrupted iterations
+crud_test   [  90% ] 100 VUs  27.0s/30s
+
+running (0m28.0s), 100/100 VUs, 1198 complete and 0 interrupted iterations
+crud_test   [  93% ] 100 VUs  28.0s/30s
+
+running (0m29.0s), 100/100 VUs, 1237 complete and 0 interrupted iterations
+crud_test   [  97% ] 100 VUs  29.0s/30s
+
+running (0m30.0s), 100/100 VUs, 1288 complete and 0 interrupted iterations
+crud_test   [ 100% ] 100 VUs  30.0s/30s
+
+running (0m31.0s), 048/100 VUs, 1340 complete and 0 interrupted iterations
+crud_test ↓ [ 100% ] 100 VUs  30s
+
+running (0m32.0s), 014/100 VUs, 1374 complete and 0 interrupted iterations
+crud_test ↓ [ 100% ] 100 VUs  30s
+
+
+  █ THRESHOLDS 
+
+    crud_error_rate
+    ✗ 'rate<0.01' rate=39.28%
+
+    delete_latency
+    ✓ 'p(95)<1000' p(95)=438.316771
+
+    get_latency
+    ✗ 'p(95)<1000' p(95)=1431.943269
+
+    http_req_failed
+    ✗ 'rate<0.01' rate=39.28%
+
+    post_latency
+    ✓ 'p(95)<1000' p(95)=444.643908
+
+    put_latency
+    ✓ 'p(95)<1000' p(95)=449.830581
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 6705   207.213538/s
+    checks_succeeded...: 60.70% 4070 out of 6705
+    checks_failed......: 39.29% 2635 out of 6705
+
+    ✗ GET status is 200
+      ↳  60% — ✓ 837 / ✗ 551
+    ✗ POST status is 201
+      ↳  61% — ✓ 847 / ✗ 541
+    ✗ POST returned task ID
+      ↳  61% — ✓ 847 / ✗ 541
+    ✗ PUT status is 200
+      ↳  60% — ✓ 509 / ✗ 338
+    ✗ PUT completed successfully
+      ↳  60% — ✓ 509 / ✗ 338
+    ✗ DELETE status is 200
+      ↳  61% — ✓ 521 / ✗ 326
+
+    CUSTOM
+    created_tasks..................: 847    26.175968/s
+    crud_error_rate................: 39.28% 1756 out of 4470
+    delete_latency.................: avg=338.084955 min=252.871734 med=311.754128 max=829.271024  p(90)=422.521062 p(95)=438.316771 
+    deleted_tasks..................: 521    16.101156/s
+    get_latency....................: avg=436.215499 min=253.029158 med=346.588488 max=1884.622133 p(90)=527.972117 p(95)=1431.943269
+    post_latency...................: avg=343.806782 min=252.006027 med=325.051449 max=848.675281  p(90)=424.576027 p(95)=444.643908 
+    put_latency....................: avg=339.400586 min=252.636156 med=305.918917 max=573.553089  p(90)=426.219252 p(95)=449.830581 
+
+    HTTP
+    http_req_duration..............: avg=370.58ms   min=252ms      med=325.78ms   max=1.88s       p(90)=442.74ms   p(95)=486.25ms   
+      { expected_response:true }...: avg=334.95ms   min=252ms      med=291.28ms   max=1.88s       p(90)=362.89ms   p(95)=407.77ms   
+    http_req_failed................: 39.28% 1756 out of 4470
+    http_reqs......................: 4470   138.142358/s
+
+    EXECUTION
+    iteration_duration.............: avg=2.23s      min=1.58s      med=2.23s      max=4.71s       p(90)=2.56s      p(95)=3.81s      
+    iterations.....................: 1388   42.895211/s
+    vus............................: 14     min=14           max=100
+    vus_max........................: 100    min=100          max=100
+
+    NETWORK
+    data_received..................: 21 MB  642 kB/s
+    data_sent......................: 795 kB 25 kB/s
+
+
+
+
+running (0m32.4s), 000/100 VUs, 1388 complete and 0 interrupted iterations
+crud_test ✓ [ 100% ] 100 VUs  30s
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+
+     execution: local
+        script: lambda-crud-test.js
+        output: -
+
+     scenarios: (100.00%) 1 scenario, 1 max VUs, 1m0s max duration (incl. graceful stop):
+              * crud_test: 1 looping VUs for 30s (gracefulStop: 30s)
+
+
+running (0m01.0s), 1/1 VUs, 0 complete and 0 interrupted iterations
+crud_test   [   3% ] 1 VUs  01.0s/30s
+
+running (0m02.0s), 1/1 VUs, 0 complete and 0 interrupted iterations
+crud_test   [   7% ] 1 VUs  02.0s/30s
+
+running (0m03.0s), 1/1 VUs, 0 complete and 0 interrupted iterations
+crud_test   [  10% ] 1 VUs  03.0s/30s
+
+running (0m04.0s), 1/1 VUs, 1 complete and 0 interrupted iterations
+crud_test   [  13% ] 1 VUs  04.0s/30s
+
+running (0m05.0s), 1/1 VUs, 1 complete and 0 interrupted iterations
+crud_test   [  17% ] 1 VUs  05.0s/30s
+
+running (0m06.0s), 1/1 VUs, 1 complete and 0 interrupted iterations
+crud_test   [  20% ] 1 VUs  06.0s/30s
+
+running (0m07.0s), 1/1 VUs, 2 complete and 0 interrupted iterations
+crud_test   [  23% ] 1 VUs  07.0s/30s
+
+running (0m08.0s), 1/1 VUs, 2 complete and 0 interrupted iterations
+crud_test   [  27% ] 1 VUs  08.0s/30s
+
+running (0m09.0s), 1/1 VUs, 3 complete and 0 interrupted iterations
+crud_test   [  30% ] 1 VUs  09.0s/30s
+
+running (0m10.0s), 1/1 VUs, 3 complete and 0 interrupted iterations
+crud_test   [  33% ] 1 VUs  10.0s/30s
+
+running (0m11.0s), 1/1 VUs, 4 complete and 0 interrupted iterations
+crud_test   [  37% ] 1 VUs  11.0s/30s
+
+running (0m12.0s), 1/1 VUs, 4 complete and 0 interrupted iterations
+crud_test   [  40% ] 1 VUs  12.0s/30s
+
+running (0m13.0s), 1/1 VUs, 4 complete and 0 interrupted iterations
+crud_test   [  43% ] 1 VUs  13.0s/30s
+
+running (0m14.0s), 1/1 VUs, 5 complete and 0 interrupted iterations
+crud_test   [  47% ] 1 VUs  14.0s/30s
+
+running (0m15.0s), 1/1 VUs, 5 complete and 0 interrupted iterations
+crud_test   [  50% ] 1 VUs  15.0s/30s
+
+running (0m16.0s), 1/1 VUs, 6 complete and 0 interrupted iterations
+crud_test   [  53% ] 1 VUs  16.0s/30s
+
+running (0m17.0s), 1/1 VUs, 6 complete and 0 interrupted iterations
+crud_test   [  57% ] 1 VUs  17.0s/30s
+
+running (0m18.0s), 1/1 VUs, 7 complete and 0 interrupted iterations
+crud_test   [  60% ] 1 VUs  18.0s/30s
+
+running (0m19.0s), 1/1 VUs, 7 complete and 0 interrupted iterations
+crud_test   [  63% ] 1 VUs  19.0s/30s
+
+running (0m20.0s), 1/1 VUs, 7 complete and 0 interrupted iterations
+crud_test   [  67% ] 1 VUs  20.0s/30s
+
+running (0m21.0s), 1/1 VUs, 8 complete and 0 interrupted iterations
+crud_test   [  70% ] 1 VUs  21.0s/30s
+
+running (0m22.0s), 1/1 VUs, 8 complete and 0 interrupted iterations
+crud_test   [  73% ] 1 VUs  22.0s/30s
+
+running (0m23.0s), 1/1 VUs, 9 complete and 0 interrupted iterations
+crud_test   [  77% ] 1 VUs  23.0s/30s
+
+running (0m24.0s), 1/1 VUs, 9 complete and 0 interrupted iterations
+crud_test   [  80% ] 1 VUs  24.0s/30s
+
+running (0m25.0s), 1/1 VUs, 10 complete and 0 interrupted iterations
+crud_test   [  83% ] 1 VUs  25.0s/30s
+
+running (0m26.0s), 1/1 VUs, 10 complete and 0 interrupted iterations
+crud_test   [  87% ] 1 VUs  26.0s/30s
+
+running (0m27.0s), 1/1 VUs, 10 complete and 0 interrupted iterations
+crud_test   [  90% ] 1 VUs  27.0s/30s
+
+running (0m28.0s), 1/1 VUs, 11 complete and 0 interrupted iterations
+crud_test   [  93% ] 1 VUs  28.0s/30s
+
+running (0m29.0s), 1/1 VUs, 11 complete and 0 interrupted iterations
+crud_test   [  97% ] 1 VUs  29.0s/30s
+
+running (0m30.0s), 1/1 VUs, 12 complete and 0 interrupted iterations
+crud_test   [ 100% ] 1 VUs  30.0s/30s
+
+running (0m31.0s), 1/1 VUs, 12 complete and 0 interrupted iterations
+crud_test ↓ [ 100% ] 1 VUs  30s
+
+
+  █ THRESHOLDS 
+
+    crud_error_rate
+    ✓ 'rate<0.01' rate=0.00%
+
+    delete_latency
+    ✓ 'p(95)<1000' p(95)=429.008835
+
+    get_latency
+    ✓ 'p(95)<1000' p(95)=795.308579
+
+    http_req_failed
+    ✓ 'rate<0.01' rate=0.00%
+
+    post_latency
+    ✓ 'p(95)<1000' p(95)=358.263199
+
+    put_latency
+    ✓ 'p(95)<1000' p(95)=387.385366
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 78      2.457012/s
+    checks_succeeded...: 100.00% 78 out of 78
+    checks_failed......: 0.00%   0 out of 78
+
+    ✓ GET status is 200
+    ✓ POST status is 201
+    ✓ POST returned task ID
+    ✓ PUT status is 200
+    ✓ PUT completed successfully
+    ✓ DELETE status is 200
+
+    CUSTOM
+    created_tasks..................: 13     0.409502/s
+    crud_error_rate................: 0.00%  0 out of 52
+    delete_latency.................: avg=319.273304 min=259.543323 med=284.664507 max=474.508421  p(90)=392.88498  p(95)=429.008835
+    deleted_tasks..................: 13     0.409502/s
+    get_latency....................: avg=444.353106 min=308.693026 med=368.851298 max=1246.956525 p(90)=487.499034 p(95)=795.308579
+    post_latency...................: avg=307.911537 min=266.651712 med=310.035229 max=379.253351  p(90)=344.253453 p(95)=358.263199
+    put_latency....................: avg=312.955804 min=261.181525 med=291.848109 max=400.5349    p(90)=376.479552 p(95)=387.385366
+
+    HTTP
+    http_req_duration..............: avg=346.12ms   min=259.54ms   med=314.21ms   max=1.24s       p(90)=431.68ms   p(95)=466.88ms  
+      { expected_response:true }...: avg=346.12ms   min=259.54ms   med=314.21ms   max=1.24s       p(90)=431.68ms   p(95)=466.88ms  
+    http_req_failed................: 0.00%  0 out of 52
+    http_reqs......................: 52     1.638008/s
+
+    EXECUTION
+    iteration_duration.............: avg=2.44s      min=2.15s      med=2.35s      max=3.87s       p(90)=2.44s      p(95)=3.02s     
+    iterations.....................: 13     0.409502/s
+    vus............................: 1      min=1       max=1
+    vus_max........................: 1      min=1       max=1
+
+    NETWORK
+    data_received..................: 602 kB 19 kB/s
+    data_sent......................: 11 kB  346 B/s
+
+
+
+
+running (0m31.7s), 0/1 VUs, 13 complete and 0 interrupted iterations
+crud_test ✓ [ 100% ] 1 VUs  30s
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+
+     execution: local
+        script: lambda-crud-test.js
+        output: -
+
+     scenarios: (100.00%) 1 scenario, 100 max VUs, 1m0s max duration (incl. graceful stop):
+              * crud_test: 100 looping VUs for 30s (gracefulStop: 30s)
+
+
+running (0m01.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+crud_test   [   3% ] 100 VUs  01.0s/30s
+
+running (0m02.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+crud_test   [   7% ] 100 VUs  02.0s/30s
+
+running (0m03.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+crud_test   [  10% ] 100 VUs  03.0s/30s
+
+running (0m04.0s), 100/100 VUs, 11 complete and 0 interrupted iterations
+crud_test   [  13% ] 100 VUs  04.0s/30s
+
+running (0m05.0s), 100/100 VUs, 98 complete and 0 interrupted iterations
+crud_test   [  17% ] 100 VUs  05.0s/30s
+
+running (0m06.0s), 100/100 VUs, 101 complete and 0 interrupted iterations
+crud_test   [  20% ] 100 VUs  06.0s/30s
+
+running (0m07.0s), 100/100 VUs, 172 complete and 0 interrupted iterations
+crud_test   [  23% ] 100 VUs  07.0s/30s
+
+running (0m08.0s), 100/100 VUs, 198 complete and 0 interrupted iterations
+crud_test   [  27% ] 100 VUs  08.0s/30s
+
+running (0m09.0s), 100/100 VUs, 232 complete and 0 interrupted iterations
+crud_test   [  30% ] 100 VUs  09.0s/30s
+
+running (0m10.0s), 100/100 VUs, 296 complete and 0 interrupted iterations
+crud_test   [  33% ] 100 VUs  10.0s/30s
+
+running (0m11.0s), 100/100 VUs, 311 complete and 0 interrupted iterations
+crud_test   [  37% ] 100 VUs  11.0s/30s
+
+running (0m12.0s), 100/100 VUs, 390 complete and 0 interrupted iterations
+crud_test   [  40% ] 100 VUs  12.0s/30s
+
+running (0m13.0s), 100/100 VUs, 404 complete and 0 interrupted iterations
+crud_test   [  43% ] 100 VUs  13.0s/30s
+
+running (0m14.0s), 100/100 VUs, 482 complete and 0 interrupted iterations
+crud_test   [  47% ] 100 VUs  14.0s/30s
+
+running (0m15.0s), 100/100 VUs, 500 complete and 0 interrupted iterations
+crud_test   [  50% ] 100 VUs  15.0s/30s
+
+running (0m16.0s), 100/100 VUs, 567 complete and 0 interrupted iterations
+crud_test   [  53% ] 100 VUs  16.0s/30s
+
+running (0m17.0s), 100/100 VUs, 594 complete and 0 interrupted iterations
+crud_test   [  57% ] 100 VUs  17.0s/30s
+
+running (0m18.0s), 100/100 VUs, 652 complete and 0 interrupted iterations
+crud_test   [  60% ] 100 VUs  18.0s/30s
+
+running (0m19.0s), 100/100 VUs, 689 complete and 0 interrupted iterations
+crud_test   [  63% ] 100 VUs  19.0s/30s
+
+running (0m20.0s), 100/100 VUs, 734 complete and 0 interrupted iterations
+crud_test   [  67% ] 100 VUs  20.0s/30s
+
+running (0m21.0s), 100/100 VUs, 787 complete and 0 interrupted iterations
+crud_test   [  70% ] 100 VUs  21.0s/30s
+
+running (0m22.0s), 100/100 VUs, 807 complete and 0 interrupted iterations
+crud_test   [  73% ] 100 VUs  22.0s/30s
+
+running (0m23.0s), 100/100 VUs, 879 complete and 0 interrupted iterations
+crud_test   [  77% ] 100 VUs  23.0s/30s
+
+running (0m24.0s), 100/100 VUs, 899 complete and 0 interrupted iterations
+crud_test   [  80% ] 100 VUs  24.0s/30s
+
+running (0m25.0s), 100/100 VUs, 968 complete and 0 interrupted iterations
+crud_test   [  83% ] 100 VUs  25.0s/30s
+
+running (0m26.0s), 100/100 VUs, 993 complete and 0 interrupted iterations
+crud_test   [  87% ] 100 VUs  26.0s/30s
+
+running (0m27.0s), 100/100 VUs, 1057 complete and 0 interrupted iterations
+crud_test   [  90% ] 100 VUs  27.0s/30s
+
+running (0m28.0s), 100/100 VUs, 1089 complete and 0 interrupted iterations
+crud_test   [  93% ] 100 VUs  28.0s/30s
+
+running (0m29.0s), 100/100 VUs, 1140 complete and 0 interrupted iterations
+crud_test   [  97% ] 100 VUs  29.0s/30s
+
+running (0m30.0s), 100/100 VUs, 1179 complete and 0 interrupted iterations
+crud_test   [ 100% ] 100 VUs  30.0s/30s
+
+running (0m31.0s), 075/100 VUs, 1204 complete and 0 interrupted iterations
+crud_test ↓ [ 100% ] 100 VUs  30s
+
+running (0m32.0s), 012/100 VUs, 1267 complete and 0 interrupted iterations
+crud_test ↓ [ 100% ] 100 VUs  30s
+
+running (0m33.0s), 003/100 VUs, 1276 complete and 0 interrupted iterations
+crud_test ↓ [ 100% ] 100 VUs  30s
+
+running (0m34.0s), 002/100 VUs, 1277 complete and 0 interrupted iterations
+crud_test ↓ [ 100% ] 100 VUs  30s
+
+
+  █ THRESHOLDS 
+
+    crud_error_rate
+    ✗ 'rate<0.01' rate=3.64%
+
+    delete_latency
+    ✓ 'p(95)<1000' p(95)=384.730659
+
+    get_latency
+    ✗ 'p(95)<1000' p(95)=2155.059845
+
+    http_req_failed
+    ✗ 'rate<0.01' rate=3.64%
+
+    post_latency
+    ✓ 'p(95)<1000' p(95)=382.527369
+
+    put_latency
+    ✓ 'p(95)<1000' p(95)=395.296676
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 7578   217.012845/s
+    checks_succeeded...: 96.63% 7323 out of 7578
+    checks_failed......: 3.36%  255 out of 7578
+
+    ✗ GET status is 200
+      ↳  94% — ✓ 1209 / ✗ 70
+    ✗ POST status is 201
+      ↳  97% — ✓ 1247 / ✗ 32
+    ✗ POST returned task ID
+      ↳  97% — ✓ 1247 / ✗ 32
+    ✗ PUT status is 200
+      ↳  96% — ✓ 1208 / ✗ 39
+    ✗ PUT completed successfully
+      ↳  96% — ✓ 1208 / ✗ 39
+    ✗ DELETE status is 200
+      ↳  96% — ✓ 1204 / ✗ 43
+
+    CUSTOM
+    created_tasks..................: 1247   35.710612/s
+    crud_error_rate................: 3.64%  184 out of 5052
+    delete_latency.................: avg=296.033443 min=253.651592 med=286.283672 max=620.978703  p(90)=328.154135 p(95)=384.730659 
+    deleted_tasks..................: 1204   34.479212/s
+    get_latency....................: avg=515.856708 min=261.444018 med=318.351046 max=6288.349705 p(90)=859.114402 p(95)=2155.059845
+    post_latency...................: avg=306.436027 min=252.875951 med=297.876262 max=1133.623076 p(90)=339.895184 p(95)=382.527369 
+    put_latency....................: avg=300.591072 min=246.830703 med=290.627488 max=475.261376  p(90)=334.570599 p(95)=395.296676 
+
+    HTTP
+    http_req_duration..............: avg=355.44ms   min=246.83ms   med=296.58ms   max=6.28s       p(90)=382.32ms   p(95)=433.28ms   
+      { expected_response:true }...: avg=347.27ms   min=246.83ms   med=295.37ms   max=6.28s       p(90)=353.58ms   p(95)=403.48ms   
+    http_req_failed................: 3.64%  184 out of 5052
+    http_reqs......................: 5052   144.67523/s
+
+    EXECUTION
+    iteration_duration.............: avg=2.45s      min=1.66s      med=2.21s      max=8.3s        p(90)=2.76s      p(95)=4.6s       
+    iterations.....................: 1279   36.627003/s
+    vus............................: 2      min=2           max=100
+    vus_max........................: 100    min=100         max=100
+
+    NETWORK
+    data_received..................: 63 MB  1.8 MB/s
+    data_sent......................: 1.1 MB 30 kB/s
+
+
+
+
+running (0m34.9s), 000/100 VUs, 1279 complete and 0 interrupted iterations
+crud_test ✓ [ 100% ] 100 VUs  30s
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+
+     execution: local
+        script: lambda-crud-test.js
+        output: -
+
+     scenarios: (100.00%) 1 scenario, 500 max VUs, 1m0s max duration (incl. graceful stop):
+              * crud_test: 500 looping VUs for 30s (gracefulStop: 30s)
+
+
+running (0m01.0s), 500/500 VUs, 0 complete and 0 interrupted iterations
+crud_test   [   3% ] 500 VUs  01.0s/30s
+
+running (0m02.0s), 500/500 VUs, 0 complete and 0 interrupted iterations
+crud_test   [   7% ] 500 VUs  02.0s/30s
+
+running (0m03.0s), 500/500 VUs, 0 complete and 0 interrupted iterations
+crud_test   [  10% ] 500 VUs  03.0s/30s
+
+running (0m04.0s), 500/500 VUs, 0 complete and 0 interrupted iterations
+crud_test   [  13% ] 500 VUs  04.0s/30s
+
+running (0m05.0s), 500/500 VUs, 51 complete and 0 interrupted iterations
+crud_test   [  17% ] 500 VUs  05.0s/30s
+
+running (0m06.0s), 500/500 VUs, 74 complete and 0 interrupted iterations
+crud_test   [  20% ] 500 VUs  06.0s/30s
+
+running (0m07.0s), 500/500 VUs, 191 complete and 0 interrupted iterations
+crud_test   [  23% ] 500 VUs  07.0s/30s
+
+running (0m08.0s), 500/500 VUs, 341 complete and 0 interrupted iterations
+crud_test   [  27% ] 500 VUs  08.0s/30s
+
+running (0m09.0s), 500/500 VUs, 392 complete and 0 interrupted iterations
+crud_test   [  30% ] 500 VUs  09.0s/30s
+
+running (0m10.0s), 500/500 VUs, 467 complete and 0 interrupted iterations
+crud_test   [  33% ] 500 VUs  10.0s/30s
+
+running (0m11.0s), 500/500 VUs, 549 complete and 0 interrupted iterations
+crud_test   [  37% ] 500 VUs  11.0s/30s
+
+running (0m12.0s), 500/500 VUs, 681 complete and 0 interrupted iterations
+crud_test   [  40% ] 500 VUs  12.0s/30s
+
+running (0m13.0s), 500/500 VUs, 812 complete and 0 interrupted iterations
+crud_test   [  43% ] 500 VUs  13.0s/30s
+
+running (0m14.0s), 500/500 VUs, 942 complete and 0 interrupted iterations
+crud_test   [  47% ] 500 VUs  14.0s/30s
+
+running (0m15.0s), 500/500 VUs, 1072 complete and 0 interrupted iterations
+crud_test   [  50% ] 500 VUs  15.0s/30s
+
+running (0m16.0s), 500/500 VUs, 1198 complete and 0 interrupted iterations
+crud_test   [  53% ] 500 VUs  16.0s/30s
+
+running (0m17.0s), 500/500 VUs, 1308 complete and 0 interrupted iterations
+crud_test   [  57% ] 500 VUs  17.0s/30s
+
+running (0m18.0s), 500/500 VUs, 1435 complete and 0 interrupted iterations
+crud_test   [  60% ] 500 VUs  18.0s/30s
+
+running (0m19.0s), 500/500 VUs, 1556 complete and 0 interrupted iterations
+crud_test   [  63% ] 500 VUs  19.0s/30s
+
+running (0m20.0s), 500/500 VUs, 1689 complete and 0 interrupted iterations
+crud_test   [  67% ] 500 VUs  20.0s/30s
+
+running (0m21.0s), 500/500 VUs, 1810 complete and 0 interrupted iterations
+crud_test   [  70% ] 500 VUs  21.0s/30s
+
+running (0m22.0s), 500/500 VUs, 1919 complete and 0 interrupted iterations
+crud_test   [  73% ] 500 VUs  22.0s/30s
+
+running (0m23.0s), 500/500 VUs, 2000 complete and 0 interrupted iterations
+crud_test   [  77% ] 500 VUs  23.0s/30s
+
+running (0m24.0s), 500/500 VUs, 2123 complete and 0 interrupted iterations
+crud_test   [  80% ] 500 VUs  24.0s/30s
+
+running (0m25.0s), 500/500 VUs, 2254 complete and 0 interrupted iterations
+crud_test   [  83% ] 500 VUs  25.0s/30s
+
+running (0m26.0s), 500/500 VUs, 2376 complete and 0 interrupted iterations
+crud_test   [  87% ] 500 VUs  26.0s/30s
+
+running (0m27.0s), 500/500 VUs, 2479 complete and 0 interrupted iterations
+crud_test   [  90% ] 500 VUs  27.0s/30s
+
+running (0m28.0s), 500/500 VUs, 2608 complete and 0 interrupted iterations
+crud_test   [  93% ] 500 VUs  28.0s/30s
+
+running (0m29.0s), 500/500 VUs, 2752 complete and 0 interrupted iterations
+crud_test   [  97% ] 500 VUs  29.0s/30s
+
+running (0m30.0s), 500/500 VUs, 2883 complete and 0 interrupted iterations
+crud_test   [ 100% ] 500 VUs  30.0s/30s
+
+running (0m31.0s), 389/500 VUs, 2996 complete and 0 interrupted iterations
+crud_test ↓ [ 100% ] 500 VUs  30s
+
+running (0m32.0s), 257/500 VUs, 3128 complete and 0 interrupted iterations
+crud_test ↓ [ 100% ] 500 VUs  30s
+
+running (0m33.0s), 083/500 VUs, 3302 complete and 0 interrupted iterations
+crud_test ↓ [ 100% ] 500 VUs  30s
+
+running (0m34.0s), 004/500 VUs, 3381 complete and 0 interrupted iterations
+crud_test ↓ [ 100% ] 500 VUs  30s
+
+
+  █ THRESHOLDS 
+
+    crud_error_rate
+    ✗ 'rate<0.01' rate=78.16%
+
+    delete_latency
+    ✗ 'p(95)<1000' p(95)=3281.576503
+
+    get_latency
+    ✗ 'p(95)<1000' p(95)=3309.338528
+
+    http_req_failed
+    ✗ 'rate<0.01' rate=78.16%
+
+    post_latency
+    ✗ 'p(95)<1000' p(95)=3329.933834
+
+    put_latency
+    ✗ 'p(95)<1000' p(95)=3334.665512
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 11949  349.77299/s
+    checks_succeeded...: 20.93% 2501 out of 11949
+    checks_failed......: 79.06% 9448 out of 11949
+
+    ✗ GET status is 200
+      ↳  24% — ✓ 845 / ✗ 2540
+    ✗ POST status is 201
+      ↳  17% — ✓ 598 / ✗ 2787
+    ✗ POST returned task ID
+      ↳  17% — ✓ 598 / ✗ 2787
+    ✗ PUT status is 200
+      ↳  27% — ✓ 164 / ✗ 434
+    ✗ PUT completed successfully
+      ↳  27% — ✓ 164 / ✗ 434
+    ✗ DELETE status is 200
+      ↳  22% — ✓ 132 / ✗ 466
+
+    CUSTOM
+    created_tasks..................: 598    17.504749/s
+    crud_error_rate................: 78.16% 6227 out of 7966
+    delete_latency.................: avg=1479.209619 min=261.662949 med=1144.301861 max=3424.800238 p(90)=3254.235865 p(95)=3281.576503
+    deleted_tasks..................: 132    3.863925/s
+    get_latency....................: avg=1604.383419 min=274.312722 med=1204.975427 max=6800.455941 p(90)=2994.569951 p(95)=3309.338528
+    post_latency...................: avg=1439.952996 min=244.679268 med=1139.350587 max=3733.827044 p(90)=3263.722364 p(95)=3329.933834
+    put_latency....................: avg=1465.383618 min=261.960637 med=1172.574401 max=3641.27867  p(90)=3279.506521 p(95)=3334.665512
+
+    HTTP
+    http_req_duration..............: avg=1.51s       min=244.67ms   med=1.16s       max=6.8s        p(90)=3.21s       p(95)=3.31s      
+      { expected_response:true }...: avg=995.14ms    min=259.1ms    med=618.28ms    max=6.8s        p(90)=2.14s       p(95)=2.52s      
+    http_req_failed................: 78.16% 6227 out of 7966
+    http_reqs......................: 7966   233.181993/s
+
+    EXECUTION
+    iteration_duration.............: avg=4.71s       min=2.39s      med=4.21s       max=13.69s      p(90)=7.45s       p(95)=8.04s      
+    iterations.....................: 3385   99.086248/s
+    vus............................: 4      min=4            max=500
+    vus_max........................: 500    min=500          max=500
+
+    NETWORK
+    data_received..................: 64 MB  1.9 MB/s
+    data_sent......................: 2.1 MB 61 kB/s
+
+
+
+
+running (0m34.2s), 000/500 VUs, 3385 complete and 0 interrupted iterations
+crud_test ✓ [ 100% ] 500 VUs  30s
