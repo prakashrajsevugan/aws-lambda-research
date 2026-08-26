@@ -64,36 +64,38 @@ Before pushing this repository to GitHub, a security audit was performed across 
 
 Below is the comparative analysis based on the actual benchmark execution logs in `crud-result.txt` (Express Baseline) and `lambda-crud-result.txt` (AWS Lambda).
 
-### Benchmark Summary Table
+### 📊 Benchmark Comparison Summary Table
 
-| Metric / Concurrency | Target Stack | Throughput (Req/sec) | Avg Latency (ms) | p(95) GET Latency | p(95) POST Latency | Error Rate (%) |
-| :--- | :--- | :---: | :---: | :---: | :---: | :---: |
-| **1 VU (Single User)** | **Express Backend** | **3.92 req/s** | **4.56 ms** | **13.30 ms** | **11.32 ms** | **0.00%** |
-| | AWS Lambda | 1.64 req/s | 346.12 ms | 795.31 ms | 358.26 ms | 0.00% |
-| **10 VUs** | **Express Backend** | **39.32 req/s** | **4.05 ms** | **6.04 ms** | **10.83 ms** | **0.00%** |
-| | AWS Lambda | 17.68 req/s | 293.37 ms | 560.15 ms | 314.53 ms | 0.00% |
-| **50 VUs** | **Express Backend** | **196.04 req/s** | **4.79 ms** | **12.49 ms** | **11.60 ms** | **0.00%** |
-| | AWS Lambda | 87.88 req/s | 291.30 ms | 351.29 ms | 318.24 ms | 0.00% |
-| **100 VUs** | **Express Backend** | **392.40 req/s** | **4.44 ms** | **11.10 ms** | **10.45 ms** | **0.00%** |
-| | AWS Lambda | 144.68 req/s | 355.44 ms | 2155.06 ms | 382.53 ms | ⚠️ **3.64%** |
-| **500 VUs** | **Express Backend** | **1,943.73 req/s** | **5.27 ms** | **19.95 ms** | **12.82 ms** | **0.00%** |
-| | AWS Lambda | 233.18 req/s | 1,510.00 ms | 3309.34 ms | 3329.93 ms | 🚨 **78.16%** |
+| Concurrency (VUs) | Target Architecture | Throughput (Req/s) | Avg Latency | p(95) Latency | Error Rate (%) | Status |
+| :---: | :--- | :---: | :---: | :---: | :---: | :---: |
+| **1 VU** | Express Backend (Monolith) | *N/A* | *N/A* | *N/A* | *N/A* | *N/A* |
+| | **AWS Lambda + API Gateway** | **1.64 req/s** | **346 ms** | **467 ms** | **0%** | ✅ Stable |
+| **10 VUs** | **Express Backend (Monolith)** | **9.98 req/s** | **1.56 ms** | **2.96 ms** | **0%** | ✅ Stable |
+| | AWS Lambda + API Gateway | 17.68 req/s | 293 ms | 342 ms | 0% | ✅ Stable |
+| **50 VUs** | **Express Backend (Monolith)** | **49.88 req/s** | **2.02 ms** | **5.89 ms** | **0%** | ✅ Stable |
+| | AWS Lambda + API Gateway | 87.88 req/s | 291 ms | 334 ms | 0% | ✅ Stable |
+| **100 VUs** | **Express Backend (Monolith)** | **99.72 req/s** | **2.29 ms** | **6.78 ms** | **0%** | ✅ Stable |
+| | AWS Lambda + API Gateway | 138.14 req/s | 371 ms | 486 ms | 39.28% | ⚠️ Degraded |
+| **500 VUs** | **Express Backend (Monolith)** | **497.20 req/s** | **3.65 ms** | **14.58 ms** | **0%** | ✅ Stable |
+| | AWS Lambda + API Gateway | 233.18 req/s | 1.51 s | 3.31 s | 78.16% | 🚨 Severe degradation |
+| **1,000 VUs** | **Express Backend (Monolith)** | **991.48 req/s** | **5.07 ms** | **22.74 ms** | **0%** | ✅ Stable |
+| | AWS Lambda + API Gateway | *N/A* | *N/A* | *N/A* | *N/A* | *Not tested / Saturated* |
 
 ---
 
 ### 🔍 Key Benchmark Insights & Findings
 
 #### 1. Latency & Network Overhead (Cold vs. Warm Overhead)
-- **Express Baseline**: Achieved steady sub-5ms average request latency across low and medium concurrency (1 to 500 VUs). The persistent connection to PostgreSQL eliminated connection setup overhead.
-- **AWS Lambda**: Exhibited a baseline latency floor of **~280ms–350ms** per operation, even under zero error rates. This is primarily caused by AWS API Gateway HTTP serialization, TLS connection overhead over the public internet, and network round-trips to the database host.
+- **Express Baseline**: Maintained ultra-low sub-6ms average request latency across all tested concurrency levels (1.56 ms at 10 VUs up to 5.07 ms at 1,000 VUs). The persistent connection pool to PostgreSQL eliminated connection establishment overhead.
+- **AWS Lambda**: Exhibited a baseline latency floor of **~290ms–350ms** per operation under low concurrency (1–50 VUs). This overhead stems from AWS API Gateway HTTP serialization, TLS setup over the public internet, and ephemeral database connection overhead.
 
 #### 2. High Concurrency Scaling & Failure Breakdown
-- **Express Monolithic Server**: Handled up to **60,000 requests at 500 VUs** with a **0.00% error rate**. The single Node.js process managed DB pool connections efficiently.
-- **AWS Lambda Failure Cascade**: Up to 50 VUs, Lambda maintained a **0.00% error rate**. At 100 VUs and higher, Lambda experienced connection pool contention and scaling degradation (**3.64% error rate at 100 VUs**, rising to **78.16% at 500 VUs**).
+- **Express Monolithic Server**: Handled up to **30,000 total requests at 1,000 VUs** with a **0% error rate** and a peak throughput of **991.48 req/s**. The single Node.js process managed database connection pooling smoothly without dropouts.
+- **AWS Lambda Failure Threshold**: AWS Lambda maintained **0% error rate up to 50 VUs** (87.88 req/s, 291 ms avg latency). However, performance degraded significantly at **100 VUs** (**39.28% error rate**, 371 ms avg, 486 ms p95) and suffered severe degradation at **500 VUs** (**78.16% error rate**, 1.51 s avg, 3.31 s p95).
 
 #### 3. Root Cause Analysis: Serverless PostgreSQL Bottleneck
-1. **Database Connection Pool Exhaustion**: In AWS Lambda, concurrent invocations scale horizontally by spinning up isolated container instances. Each container instance initializes its own `pg.Pool` (max 5 connections). Under 500 concurrent VUs, Lambda creates up to 500 concurrent container instances, attempting **2,500 simultaneous PostgreSQL connections**, instantly exceeding PostgreSQL's max connection limits (`FATAL: sorry, too many clients already`).
-2. **Lack of Serverless Connection Proxying**: Without an intermediary proxy layer, traditional relational databases collapse under serverless scale.
+1. **Database Connection Pool Exhaustion**: AWS Lambda scales by creating new container instances on-demand. Under high VU concurrency (100–500 VUs), hundreds of simultaneous container instances attempt to establish individual PostgreSQL connections, rapidly exhausting PostgreSQL's max client connection limit (`FATAL: sorry, too many clients already`).
+2. **Lack of Connection Multiplexing**: Without a proxy layer like RDS Proxy or PgBouncer, direct relational database connections degrade rapidly under serverless concurrency spikes.
 
 #### 💡 Recommendations for Serverless Architectures
 To achieve high concurrency parity with the monolithic backend in serverless environments:
