@@ -183,6 +183,3 @@ API_ENDPOINT=<LAMBDA_API_ENDPOINT> k6 run performance-tests/lambda-crud-test.js
 ```
 
 ---
-
-## 📜 License
-MIT License.
