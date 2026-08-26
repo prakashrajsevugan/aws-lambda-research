@@ -27,9 +27,9 @@ Before pushing this repository to GitHub, a security audit was performed across 
                         |     (Frontend)       |
                         +----------+-----------+
                                    |
-         +-------------------------+-------------------------+
-         |                                                   |
-         v                                                   v
+            +-----------------------+------------------------+
+            |                                                |
+            v                                                v
 +------------------------+                       +------------------------+
 | Express / Node.js API  |                       | AWS API Gateway        |
 |  (Monolithic Backend)  |                       +-----------+------------+
@@ -40,13 +40,12 @@ Before pushing this repository to GitHub, a security audit was performed across 
             |                                    |    (lambda-backend)    |
             |                                    +-----------+------------+
             |                                                |
-            +------------------------+-----------------------+
-                                     |
-                                     v
-                        +----------------------+
-                        | PostgreSQL Database  |
-                        |   (tasks table)      |
-                        +----------------------+
+            |                                                |
+            v                                                v
++----------------------+                          +----------------------+
+|   PostgreSQL DB      |                          |   PostgreSQL DB      |
+|     (Local)          |                          |     (AWS RDS)        |
++----------------------+                          +----------------------+
 ```
 
 ---
