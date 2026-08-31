@@ -77,8 +77,6 @@ Below is the comparative analysis based on the actual benchmark execution logs i
 | | AWS Lambda + API Gateway | 138.14 req/s | 371 ms | 486 ms | 39.28% | ⚠️ Degraded |
 | **500 VUs** | **Express Backend (Monolith)** | **497.20 req/s** | **3.65 ms** | **14.58 ms** | **0%** | ✅ Stable |
 | | AWS Lambda + API Gateway | 233.18 req/s | 1.51 s | 3.31 s | 78.16% | 🚨 Severe degradation |
-| **1,000 VUs** | **Express Backend (Monolith)** | **991.48 req/s** | **5.07 ms** | **22.74 ms** | **0%** | ✅ Stable |
-| | AWS Lambda + API Gateway | *N/A* | *N/A* | *N/A* | *N/A* | *Not tested / Saturated* |
 
 ---
 
