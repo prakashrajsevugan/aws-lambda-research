@@ -29,7 +29,7 @@ Before pushing this repository to GitHub, a security audit was performed across 
                                    |
             +-----------------------+------------------------+
             |                                                |
-            v                                                v
+            v                                                 v
 +------------------------+                       +------------------------+
 | Express / Node.js API  |                       | AWS API Gateway        |
 |  (Monolithic Backend)  |                       +-----------+------------+
