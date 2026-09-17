@@ -11,6 +11,10 @@ function getPool() {
             password: process.env.DB_PASSWORD,
             database: process.env.DB_NAME,
 
+            ssl: {
+                rejectUnauthorized: false
+            },
+
             max: 5,
             idleTimeoutMillis: 30000,
             connectionTimeoutMillis: 5000,
@@ -213,15 +217,14 @@ exports.handler = async (event) => {
             path
         });
 
-    } catch (error) {
-
-        console.error(
-            "Lambda error:",
-            error
-        );
-
-        return response(500, {
-            error: "Internal server error"
-        });
+    }  catch (error) {
+        console.error("DATABASE ERROR:", error);
+    
+        return {
+            statusCode: 500,
+            body: JSON.stringify({
+                error: error.message
+            })
+        };
     }
 };
